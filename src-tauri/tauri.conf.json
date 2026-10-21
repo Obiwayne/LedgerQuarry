@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "LedgerQuarry",
+  "version": "0.1.0",
+  "identifier": "dev.repoquarry.ledgerquarry",
+  "build": {
+    "frontendDist": "../ui"
+  },
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "publisher": "RepoQuarry",
+    "copyright": "MIT licence",
+    "category": "Finance",
+    "shortDescription": "Private receipt and spending tracker",
+    "longDescription": "Snap receipts on your phone, read them with a local AI model, and track spending on your PC. Phone and PC talk privately over Tailscale.",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
+    "windows": {
+      "nsis": { "installMode": "currentUser" }
+    }
+  }
+}
