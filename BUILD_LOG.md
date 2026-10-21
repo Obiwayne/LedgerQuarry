@@ -76,3 +76,11 @@ A personal finance app that looks after someone's spending: a stylish dashboard 
 - **Music:** an original 112 bpm jazz bed synthesised in Python (`promo/music/jazz.py`): Rhodes-style piano on Gm9–C13–Fmaj9–Dm9, walking bass, brushes and a swung ride. No samples, no licences. Ducked by about 8 dB under each voice line.
 - **Animation:** Remotion. Shared camera (slow push and drift), spring entrances with overshoot, faster ease-in exits, staggered elements, a tap that travels on an arc and presses, a one-second count-up, word-by-word captions so it works muted. Real 3× app captures for the phone and dashboard.
 - **Checks:** key-frame stills of every scene before the full render; fixed the receipt pile and a chip colliding with captions, a capture taken mid-animation, a smudge showing through a card, and a label switching before its tick. Final pass with ffmpeg: −14 LUFS integrated, −1.5 dB true peak, yuv420p, faststart.
+
+## 7. Promo video v2 (the "Apple-style" cut)
+
+Asked for a snappier second video, with a TikTok by @thednyx ("whop saas explainer") as the reference. Studied it frame by frame in the browser: dark kinetic opener with an app icon set inside a word, a one-word punch, a cut to a bright Apple-style stage, an iOS-style notification card, floating white cards, a cursor click, a big logo with a two-word line, and a dark end card, a beat about every 1.5 s.
+
+`promo/STORYBOARD-v2.md`, `promo/src/v2.tsx` (composition `PromoV2`): nine beats in 20 s; dark → mint circle wipe → light stage → dark end card; glossy icon tiles inside the type (camera, AI chip, lock, check); notification "Receipt read · Gail's Bakery · £14.85"; tap and click on the shutter; white read card with ticks; white dashboard card with a count-up; QR card flip; logo and "Track every receipt."
+
+Audio: nine short Kokoro lines (speed 1.1), a faster 126 bpm jazz bed with finger snaps (`music/jazz.py out 126 --snaps`), and synthesised whoosh, pop and click effects (`music/sfx.py`) on every cut, card and tap. Final: −13.8 LUFS, −1.5 dB peak, 20.1 s. One render bug fixed on the way (a hook called after an early return).

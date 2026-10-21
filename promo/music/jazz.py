@@ -11,7 +11,8 @@ import wave
 import numpy as np
 
 SR = 48000
-BPM = 112
+BPM = int(sys.argv[2]) if len(sys.argv) > 2 else 112
+SNAPS = "--snaps" in sys.argv
 BEAT = 60 / BPM
 DUR = 20.6
 rng = np.random.default_rng(7)
@@ -114,6 +115,12 @@ for b in range(n_bars):
     add(brush(bar * 0.95, 0.025), start, pan=-0.3)
     for k in (1, 3):
         add(noise(0.18, 25) * 0.09, start + k * BEAT, pan=-0.2)
+    # Finger snaps on 2 and 4 (v2): a bright click plus a short burst of noise.
+    if SNAPS:
+        for k in (1, 3):
+            t = np.arange(int(SR * 0.12)) / SR
+            snap = (noise(0.12, 60) * 0.5 + np.sin(2 * np.pi * 2200 * t) * np.exp(-t * 90) * 0.4) * 0.22
+            add(snap, start + k * BEAT + 0.004, pan=0.15)
     # Feathered kick on 1 and 3.
     t = np.arange(int(SR * 0.25)) / SR
     kick = np.sin(2 * np.pi * (55 + 60 * np.exp(-t * 40)) * t) * np.exp(-t * 14) * 0.22

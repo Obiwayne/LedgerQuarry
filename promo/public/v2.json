@@ -1,0 +1,51 @@
+{
+ "voice": "af_heart",
+ "speed": 1.1,
+ "lines": [
+  {
+   "file": "v2-1.wav",
+   "text": "Receipts. Everywhere.",
+   "seconds": 1.225
+  },
+  {
+   "file": "v2-2.wav",
+   "text": "Lost. Faded. Forgotten.",
+   "seconds": 1.478
+  },
+  {
+   "file": "v2-3.wav",
+   "text": "Meet LedgerQuarry.",
+   "seconds": 1.127
+  },
+  {
+   "file": "v2-4.wav",
+   "text": "Snap a receipt,",
+   "seconds": 0.966
+  },
+  {
+   "file": "v2-5.wav",
+   "text": "and AI on your own PC reads it.",
+   "seconds": 2.08
+  },
+  {
+   "file": "v2-6.wav",
+   "text": "Your spending, sorted.",
+   "seconds": 1.208
+  },
+  {
+   "file": "v2-7.wav",
+   "text": "Private. No cloud.",
+   "seconds": 1.168
+  },
+  {
+   "file": "v2-8.wav",
+   "text": "LedgerQuarry.",
+   "seconds": 0.866
+  },
+  {
+   "file": "v2-9.wav",
+   "text": "Free and open source.",
+   "seconds": 1.183
+  }
+ ]
+}

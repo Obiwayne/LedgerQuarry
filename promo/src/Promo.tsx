@@ -5,7 +5,7 @@ import { Backdrop, Caption } from './kit';
 import { End, Hook, Private, Read, Snap, Track } from './scenes';
 
 /** Load the brand fonts before frame 0 renders: a fallback font is a bug. */
-function useFonts() {
+export function useFonts() {
   const [handle] = useState(() => delayRender('fonts'));
   useEffect(() => {
     const faces = [
