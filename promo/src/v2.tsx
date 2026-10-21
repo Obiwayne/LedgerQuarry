@@ -317,7 +317,7 @@ function musicVolume(f: number) {
     const end = at + sec * FPS;
     duck = Math.max(duck, interpolate(f, [at - 8, at, end, end + 10], [0, 1, 1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }));
   }
-  return (0.4 - duck * 0.22) * interpolate(f, [1150, 1200], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  return (0.42 - duck * 0.2) * interpolate(f, [1150, 1200], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
 }
 
 const Shot: React.FC<{ s: { from: number; dur: number }; children: React.ReactNode; push?: number }> = ({ s, children, push = 0.04 }) => {
@@ -346,7 +346,7 @@ export const PromoV2: React.FC = () => {
       {WHOOSH.map((at) => <Sequence key={`w${at}`} from={at - 6} durationInFrames={30}><Audio src={staticFile('sfx-whoosh.wav')} volume={0.22} /></Sequence>)}
       {POP.map((at) => <Sequence key={`p${at}`} from={at} durationInFrames={10}><Audio src={staticFile('sfx-pop.wav')} volume={0.28} /></Sequence>)}
       {CLICK.map((at) => <Sequence key={`c${at}`} from={at} durationInFrames={6}><Audio src={staticFile('sfx-click.wav')} volume={0.4} /></Sequence>)}
-      <Audio src={staticFile('jazz-v2.wav')} volume={(f) => musicVolume(f)} />
+      <Audio src={staticFile('house.wav')} volume={(f) => musicVolume(f)} />
     </AbsoluteFill>
   );
 };
