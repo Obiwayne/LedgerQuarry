@@ -1,0 +1,36 @@
+{
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "file": "vo-1.wav",
+   "text": "Still keeping receipts in a drawer?",
+   "seconds": 1.664
+  },
+  {
+   "file": "vo-2.wav",
+   "text": "Snap it with LedgerQuarry.",
+   "seconds": 1.466
+  },
+  {
+   "file": "vo-3.wav",
+   "text": "A private AI on your own PC reads the shop, total and tax.",
+   "seconds": 4.118
+  },
+  {
+   "file": "vo-4.wav",
+   "text": "Your spending, sorted. Budgets and all.",
+   "seconds": 2.308
+  },
+  {
+   "file": "vo-5.wav",
+   "text": "Paired by QR over Tailscale. Nothing in the cloud.",
+   "seconds": 3.08
+  },
+  {
+   "file": "vo-6.wav",
+   "text": "LedgerQuarry. Free and open source.",
+   "seconds": 2.202
+  }
+ ]
+}

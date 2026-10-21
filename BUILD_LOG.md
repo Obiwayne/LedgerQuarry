@@ -62,4 +62,17 @@ A personal finance app that looks after someone's spending: a stylish dashboard 
 
 ## 5. Publishing
 
-GitHub repo and v0.1.0 release, a RepoQuarry blog post, and a shared-build entry under RepoQuarry's Receipt scanner build. See the README for links.
+- GitHub repo and v0.1.0 release with the setup.exe, MSI and checksums.
+- Blog post on RepoQuarry: https://repoquarry.dev/blog/ledgerquarry-private-receipt-tracker (cover and screenshots hosted in `docs/blog/`).
+- Shared-build entry under RepoQuarry's Receipt scanner build: https://github.com/Obiwayne/RepoQuarry/pull/49 (waiting for review).
+
+## 6. Promo video (20 s, 9:16)
+
+`promo/` holds the source; the finished file is attached to the v0.1.0 release.
+
+- **Research:** TikTok's discover pages show nothing without signing in, so the patterns came from product-video guides (Rotato): hook on something familiar in the first second, one idea per shot, hold then move, zoom into the UI so it reads on a phone, monitor-to-phone camera moves, dark high-contrast finish.
+- **Storyboard first** (`promo/STORYBOARD.md`): hook → snap → read → track → private → end card, 1200 frames at 60 fps. Rebalanced once after recording the voice, because two lines ran longer than their scenes.
+- **Voice:** [Kokoro](https://repoquarry.dev/projects/kokoro) from the RepoQuarry catalogue, voice `af_heart`, run locally with kokoro-onnx (`promo/voice/speak.py`, model files not committed). One clip per scene, trimmed, timed to the cuts.
+- **Music:** an original 112 bpm jazz bed synthesised in Python (`promo/music/jazz.py`): Rhodes-style piano on Gm9–C13–Fmaj9–Dm9, walking bass, brushes and a swung ride. No samples, no licences. Ducked by about 8 dB under each voice line.
+- **Animation:** Remotion. Shared camera (slow push and drift), spring entrances with overshoot, faster ease-in exits, staggered elements, a tap that travels on an arc and presses, a one-second count-up, word-by-word captions so it works muted. Real 3× app captures for the phone and dashboard.
+- **Checks:** key-frame stills of every scene before the full render; fixed the receipt pile and a chip colliding with captions, a capture taken mid-animation, a smudge showing through a card, and a label switching before its tick. Final pass with ffmpeg: −14 LUFS integrated, −1.5 dB true peak, yuv420p, faststart.

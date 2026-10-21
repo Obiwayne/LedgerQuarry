@@ -4,3 +4,7 @@ src-tauri/gen/schemas/
 release/
 *.log
 .devdata/
+promo/node_modules/
+promo/out/
+promo/voice/models/
+promo/voice/.venv/

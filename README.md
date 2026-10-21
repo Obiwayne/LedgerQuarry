@@ -4,6 +4,8 @@
 
 ![LedgerQuarry desktop dashboard](docs/screenshots/desktop-dashboard.png)
 
+Read the launch post: [We built LedgerQuarry](https://repoquarry.dev/blog/ledgerquarry-private-receipt-tracker) · Watch the [20-second promo](https://github.com/Obiwayne/LedgerQuarry/releases/download/v0.1.0/LedgerQuarry-promo-20s.mp4)
+
 | Phone: dashboard | Phone: snap and read | Phone: receipt |
 |---|---|---|
 | ![Phone dashboard](docs/screenshots/phone-dashboard.png) | ![Receipt read on the phone](docs/screenshots/phone-read.png) | ![Receipt details](docs/screenshots/phone-receipt.png) |
