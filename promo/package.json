@@ -6,8 +6,9 @@
     "studio": "remotion studio",
     "still": "remotion still src/index.tsx",
     "render": "remotion render src/index.tsx Promo out/ledgerquarry-promo-vertical.mp4 --codec h264 --crf 16 --pixel-format yuv420p",
-    "render:v2": "remotion render src/index.tsx PromoV2 out/ledgerquarry-promo-v2-raw.mp4 --codec h264 --crf 16 --pixel-format yuv420p",
-    "finish:v2": "ffmpeg -y -i out/ledgerquarry-promo-v2-raw.mp4 -af loudnorm=I=-14:TP=-1.5:LRA=7 -c:a aac -b:a 192k -vf scale=out_range=tv,format=yuv420p -c:v libx264 -crf 16 -preset slow -movflags +faststart out/LedgerQuarry-promo-v2-20s.mp4",
+    "render:v2": "remotion render src/index.tsx PromoV2 out/v2-novoice-music.mp4 --props={\"music\":false} --codec h264 --crf 16 --pixel-format yuv420p && ffmpeg -y -i out/v2-novoice-music.mp4 -vn -ac 2 -ar 48000 out/v2-voice.wav",
+    "mix:v2": "python music/mix.py out/v2-voice.wav public/house.wav out/v2-mix.wav",
+    "finish:v2": "ffmpeg -y -i out/v2-novoice-music.mp4 -i out/v2-mix.wav -map 0:v -map 1:a -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -vf scale=out_range=tv,format=yuv420p -c:v libx264 -crf 16 -preset slow -movflags +faststart -shortest out/LedgerQuarry-promo-v2-20s.mp4",
     "finish": "ffmpeg -y -i out/ledgerquarry-promo-vertical.mp4 -af loudnorm=I=-14:TP=-1.5:LRA=7 -c:a aac -b:a 192k -vf scale=out_range=tv,format=yuv420p -c:v libx264 -crf 16 -preset slow -movflags +faststart out/LedgerQuarry-promo-20s.mp4"
   },
   "dependencies": {

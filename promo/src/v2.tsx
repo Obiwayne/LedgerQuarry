@@ -326,7 +326,8 @@ const Shot: React.FC<{ s: { from: number; dur: number }; children: React.ReactNo
   return <AbsoluteFill style={{ transform: `scale(${1 + push * p}) translateY(${Math.sin(f / 40) * 3}px)` }}>{children}</AbsoluteFill>;
 };
 
-export const PromoV2: React.FC = () => {
+/** `music: false` renders voice and effects only, so the music can be ducked under the voice in ffmpeg (see `npm run mix:v2`). */
+export const PromoV2: React.FC<{ music?: boolean }> = ({ music = true }) => {
   useFonts();
   const shots: [{ from: number; dur: number }, React.FC][] = [
     [S2.open, Open], [S2.punch, PunchScene], [S2.meet, Meet], [S2.snap, SnapScene], [S2.read, ReadScene],
@@ -346,7 +347,7 @@ export const PromoV2: React.FC = () => {
       {WHOOSH.map((at) => <Sequence key={`w${at}`} from={at - 6} durationInFrames={30}><Audio src={staticFile('sfx-whoosh.wav')} volume={0.22} /></Sequence>)}
       {POP.map((at) => <Sequence key={`p${at}`} from={at} durationInFrames={10}><Audio src={staticFile('sfx-pop.wav')} volume={0.28} /></Sequence>)}
       {CLICK.map((at) => <Sequence key={`c${at}`} from={at} durationInFrames={6}><Audio src={staticFile('sfx-click.wav')} volume={0.4} /></Sequence>)}
-      <Audio src={staticFile('house.wav')} volume={(f) => musicVolume(f)} />
+      {music ? <Audio src={staticFile('house.wav')} volume={(f) => musicVolume(f)} /> : null}
     </AbsoluteFill>
   );
 };
